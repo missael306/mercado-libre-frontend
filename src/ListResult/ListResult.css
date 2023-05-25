@@ -5,3 +5,7 @@
 .app-bullet-available{
     color: green;
 }
+
+.breadcrumb{
+    font-size: .8em;
+}

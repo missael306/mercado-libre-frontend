@@ -14,10 +14,10 @@ function ListResult() {
         </nav>
         <div className="container bg-white">
           <div className="row">
-            <div className="col-3">
+            <div className="col col-sm-4 col-md-3 d-flex justify-ontent-center align-items-center">
               <img src="https://cdn1.coppel.com/images/catalog/pm/2894843-1.jpg" alt="Producto" className='img-fluid' />
             </div>
-            <div className="col-6">
+            <div className="col col-sm-8 col-md-6 p-3">
               <div className="row">
                 <div className="col d-flex">
                   <p className='fs-3 align-self-center m-0'>$ 1,902</p>
@@ -30,7 +30,7 @@ function ListResult() {
                 </div>
               </div>
             </div>
-            <div className="col-3 d-flex justify-content-center align-items-center">
+            <div className="col col-md-3 d-flex justify-ontent-center align-items-center d-none  d-md-flex">
               <div className="row w-100">
                 <div className="col d-grid gap-2">
                   <button type="button" className="btn btn-primary btn-sm">Comprar ahora</button>
@@ -40,10 +40,10 @@ function ListResult() {
             </div>
           </div>
           <div className="row">
-            <div className="col-3">
+            <div className="col col-sm-4 col-md-3 d-flex justify-ontent-center align-items-center">
               <img src="https://cdn1.coppel.com/images/catalog/pm/2894843-1.jpg" alt="Producto" className='img-fluid' />
             </div>
-            <div className="col-6">
+            <div className="col col-sm-8 col-md-6 p-3">
               <div className="row">
                 <div className="col d-flex">
                   <p className='fs-3 align-self-center m-0'>$ 1,902</p>
@@ -56,7 +56,7 @@ function ListResult() {
                 </div>
               </div>
             </div>
-            <div className="col-3 d-flex justify-content-center align-items-center">
+            <div className="col col-md-3 d-flex justify-ontent-center align-items-center d-none  d-md-flex">
               <div className="row w-100">
                 <div className="col d-grid gap-2">
                   <button type="button" className="btn btn-primary btn-sm">Comprar ahora</button>
@@ -66,10 +66,10 @@ function ListResult() {
             </div>
           </div>
           <div className="row">
-            <div className="col-3">
+            <div className="col col-sm-4 col-md-3 d-flex justify-ontent-center align-items-center">
               <img src="https://cdn1.coppel.com/images/catalog/pm/2894843-1.jpg" alt="Producto" className='img-fluid' />
             </div>
-            <div className="col-6">
+            <div className="col col-sm-8 col-md-6 p-3">
               <div className="row">
                 <div className="col d-flex">
                   <p className='fs-3 align-self-center m-0'>$ 1,902</p>
@@ -82,7 +82,7 @@ function ListResult() {
                 </div>
               </div>
             </div>
-            <div className="col-3 d-flex justify-content-center align-items-center">
+            <div className="col col-md-3 d-flex justify-ontent-center align-items-center d-none  d-md-flex">
               <div className="row w-100">
                 <div className="col d-grid gap-2">
                   <button type="button" className="btn btn-primary btn-sm">Comprar ahora</button>

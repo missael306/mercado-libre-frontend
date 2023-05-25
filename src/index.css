@@ -22,7 +22,7 @@ body {
     color: var(--main-text-color-button);
 }
 
-.btn-light{
+.btn-light {
     background-color: var(--secong-bg-color-button);
     border-color: transparent;
     color: var(--secong-text-color-button);
@@ -34,4 +34,12 @@ body {
     background-color: #1f4e96;
     border-color: transparent;
     color: #fff;
+}
+
+.btn-light:hover,
+.btn-light:active,
+.btn-light:focus {
+    background-color: var(--secong-hover-color-button);
+    border-color: transparent;
+    color: var(--secong-text-color-button);
 }
