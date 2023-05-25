@@ -1,3 +1,9 @@
 :root {
+    --main-fill-color: #ededed;
     --main-bg-color: rgb(255,241,89);
+    --secong-bg-color: #dbdbdb;
+    --main-bg-color-button: #3483fa;
+    --main-text-color-button: #fff;
+    --secong-bg-color-button: rgba(65,137,230,.15);
+    --secong-text-color-button: #3483fa;
   }

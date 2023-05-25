@@ -2,12 +2,36 @@
 @import './assets/vars.css';
 @import 'bootstrap/dist/css/bootstrap.css';
 
-.app-logo{    
+body {
+    background-color: var(--main-fill-color);
+}
+
+.app-logo {
     height: 12vmin;
     padding: 5px;
     margin-right: 5px;
 }
 
-.form-control:focus{
+.form-control:focus {
     box-shadow: 0 0 0 0.02rem rgba(13, 110, 253, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--main-bg-color-button);
+    border-color: transparent;
+    color: var(--main-text-color-button);
+}
+
+.btn-light{
+    background-color: var(--secong-bg-color-button);
+    border-color: transparent;
+    color: var(--secong-text-color-button);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #1f4e96;
+    border-color: transparent;
+    color: #fff;
 }

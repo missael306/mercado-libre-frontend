@@ -8,8 +8,8 @@ function AppUI() {
     return (
         <React.Fragment>
             <SearchBar />
-            <DetailProduct />
             <ListResult />
+            <DetailProduct />
         </React.Fragment>
     );
 }
