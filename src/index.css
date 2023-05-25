@@ -1,1 +1,13 @@
 @import-normalize;
+@import './assets/vars.css';
+@import 'bootstrap/dist/css/bootstrap.css';
+
+.app-logo{    
+    height: 12vmin;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.form-control:focus{
+    box-shadow: 0 0 0 0.02rem rgba(13, 110, 253, 0.25);
+}

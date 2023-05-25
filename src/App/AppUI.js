@@ -7,9 +7,9 @@ import { SearchBar } from '../SearchBar/SearchBar.js';
 function AppUI() {
     return (
         <React.Fragment>
+            <SearchBar />
             <DetailProduct />
             <ListResult />
-            <SearchBar />
         </React.Fragment>
     );
 }
