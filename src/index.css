@@ -12,6 +12,14 @@ body {
     margin-right: 5px;
 }
 
+.app-breadcrumb{
+    background-color: var(--secong-bg-color);
+}
+
+.breadcrumb{
+    font-size: .8em;
+}
+
 .form-control:focus {
     box-shadow: 0 0 0 0.02rem rgba(13, 110, 253, 0.25);
 }

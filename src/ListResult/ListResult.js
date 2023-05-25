@@ -13,7 +13,7 @@ function ListResult() {
           </ol>
         </nav>
         <div className="container bg-white">
-          <div className="row">
+        <div className="row">
             <div className="col col-sm-4 col-md-3 d-flex justify-ontent-center align-items-center">
               <img src="https://cdn1.coppel.com/images/catalog/pm/2894843-1.jpg" alt="Producto" className='img-fluid' />
             </div>

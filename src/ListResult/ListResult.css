@@ -1,11 +1,3 @@
-.app-breadcrumb{
-    background-color: var(--secong-bg-color);
-}
-
 .app-bullet-available{
     color: green;
-}
-
-.breadcrumb{
-    font-size: .8em;
 }
