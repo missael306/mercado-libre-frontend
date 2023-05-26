@@ -1,6 +1,7 @@
 @import-normalize;
-@import './assets/vars.css';
+@import './assets/css/vars.css';
 @import 'bootstrap/dist/css/bootstrap.css';
+@import 'alertifyjs/build/css/alertify.css';
 
 body {
     background-color: var(--main-fill-color);

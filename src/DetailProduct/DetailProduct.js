@@ -1,15 +1,16 @@
 import React from 'react';
 import './DetailProduct.css';
+import ShareFunction from '../assets/util/shareFunctions';
+const shareFunction = new ShareFunction();
 
-function DetailProduct() {
-
+function DetailProduct() {  
   return (
     <React.Fragment>
       <div className="container">
         <nav aria-label="breadcrumb" className='app-breadcrumb rounded-top-1 mt-3 p-2'>
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="index.html">Celulares y Telefonía</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href='index.html'>Celulares y Smartphones</a></li>
+          <ol className="breadcrumb mb-0">
+            <li className="breadcrumb-item"><a href="index.html">Celulares y Telefonía</a></li>
+            <li className="breadcrumb-item active" aria-current="page"><a href='index.html'>Celulares y Smartphones</a></li>
           </ol>
         </nav>
         <div className="container bg-white">
@@ -18,8 +19,8 @@ function DetailProduct() {
               <img src="https://cdn1.coppel.com/images/catalog/pm/2894843-1.jpg" alt="Producto" className='img-fluid w-75 my-0 mx-auto' />
             </div>
             <div className="col-xs-12 col-sm-12 col-md-4 p-3">
-              <div class="card h-100">
-                <div class="card-body">
+              <div className="card h-100">
+                <div className="card-body">
                   <div className="row">
                     <div className="col">
                       <p className='fs-6'>Nuevo - 241 vistas</p>
@@ -29,37 +30,37 @@ function DetailProduct() {
                   </div>
                   <div className="row">
                     <div className="col-12 d-grid gap-2">
-                      <button type="button" className="btn btn-primary btn-sm">Comprar ahora</button>
-                      <button type="button" className="btn btn-light btn-sm">Agregar al carrito</button>
+                      <button type="button" className="btn btn-primary btn-sm" onClick={()=>{shareFunction.onDevelop()}}>Comprar ahora</button>
+                      <button type="button" className="btn btn-light btn-sm" onClick={()=>{shareFunction.onDevelop()}}>Agregar al carrito</button>
                     </div>
                     <div className="col-12 pt-3">
                       <div className="row">
                         <div className="col-1 text-center">
-                          <i class="bi bi-arrow-return-left d-inline-block"></i>
+                          <i className="bi bi-arrow-return-left d-inline-block"></i>
                         </div>
                         <div className="col-11">
-                          <span className='app-nota'>Devolución gratis</span>
+                          <span className='app-nota' onClick={()=>{shareFunction.onDevelop()}}>Devolución gratis</span>
                           <span>. Tienes 30 días desde que lo recibes.</span>
                         </div>
-                      </div>       
+                      </div>
                       <div className="row mt-3">
                         <div className="col-1 text-center">
-                          <i class="bi bi-patch-check"></i>
+                          <i className="bi bi-patch-check"></i>
                         </div>
                         <div className="col-11">
-                        <span className='app-nota'>Compra Protegida</span>
+                          <span className='app-nota' onClick={()=>{shareFunction.onDevelop()}} >Compra Protegida</span>
                           <span>, recibe el producto que esperabas o te devolvemos tu dinero.</span>
                         </div>
-                      </div>       
+                      </div>
                       <div className="row mt-3">
                         <div className="col-1 text-center">
-                        <i class="bi bi-trophy"></i>
+                          <i className="bi bi-trophy"></i>
                         </div>
                         <div className="col-11">
-                          <span className='app-nota'>Mercado Puntos</span>
+                          <span className='app-nota' onClick={()=>{shareFunction.onDevelop()}}>Mercado Puntos</span>
                           <span>. Sumas 1052 puntos.</span>
                         </div>
-                      </div>                      
+                      </div>
                     </div>
                   </div>
                 </div>
