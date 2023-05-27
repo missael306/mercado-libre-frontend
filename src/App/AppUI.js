@@ -9,7 +9,7 @@ function AppUI() {
         <React.Fragment>
             <SearchBar />
             <ListResult />
-            <DetailProduct />
+            <DetailProduct id={"MLA1131359154"}/>
         </React.Fragment>
     );
 }

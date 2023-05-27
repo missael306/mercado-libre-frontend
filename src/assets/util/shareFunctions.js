@@ -7,6 +7,10 @@ class ShareFunction {
     onDevelop() {
         alertify.warning(Config.DEVELOP_MESSAGE);
     }
+
+    generalErrorMessage() {
+        alertify.error(Config.GENERAL_ERROR_MESSAGE);
+    }
 }
 
 module.exports = ShareFunction ;

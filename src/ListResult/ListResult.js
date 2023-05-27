@@ -2,16 +2,23 @@ import React from 'react';
 import './ListResult.css';
 import { ListItem } from '../ListItem/ListItem.js';
 import axios from 'axios';
+import ShareFunction from '../assets/util/shareFunctions';
+const shareFunction = new ShareFunction();
+const Config = require('../assets/util/config');
 
-function ListResult() {  
+function ListResult() {
   const [products, setProducts] = React.useState([]);
 
   React.useEffect(() => {
     const productsFetch = async () => {
-      const productResponse = await axios.get('http://localhost:3000/api/v1/products', { headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': "*" } });
+      const productResponse = await axios.get(`${Config.URL_API}/products`)
+        .catch((err) => {
+          console.log(err);
+          shareFunction.generalErrorMessage();
+        });
       setProducts(productResponse.data.items);
     };
-    productsFetch().catch(() => { console.log('Error al obtener los productos') });
+    productsFetch();
   }, []);
   return (
     <React.Fragment>
@@ -27,7 +34,7 @@ function ListResult() {
             products.map(product => (
               <ListItem key={product.id} title={product.title} price={product.price} image={product.thumbnail} />
             ))
-          }          
+          }
         </div>
       </div>
     </React.Fragment>
