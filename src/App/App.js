@@ -1,9 +1,12 @@
 import './App.css';
 import { AppUI } from './AppUI';
+import { ProductProvider } from '../ProductContext/ProductContext';
 
 function App() {
   return (
-    <AppUI />
+    <ProductProvider>
+      <AppUI />
+    </ProductProvider>
   );
 }
 

@@ -4,7 +4,7 @@ import { DetailProduct } from '../DetailProduct/DetailProduct.js';
 import { ListResult } from '../ListResult/ListResult.js';
 import { SearchBar } from '../SearchBar/SearchBar.js';
 
-function AppUI() {
+function AppUI() {    
     return (
         <React.Fragment>
             <SearchBar />

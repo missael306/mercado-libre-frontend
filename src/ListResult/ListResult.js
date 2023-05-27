@@ -1,25 +1,11 @@
 import React from 'react';
 import './ListResult.css';
 import { ListItem } from '../ListItem/ListItem.js';
-import axios from 'axios';
-import ShareFunction from '../assets/util/shareFunctions';
-const shareFunction = new ShareFunction();
-const Config = require('../assets/util/config');
+import { ProductContext } from '../ProductContext/ProductContext.js';
 
-function ListResult() {
-  const [products, setProducts] = React.useState([]);
-
-  React.useEffect(() => {
-    const productsFetch = async () => {
-      const productResponse = await axios.get(`${Config.URL_API}/products`)
-        .catch((err) => {
-          console.log(err);
-          shareFunction.generalErrorMessage();
-        });
-      setProducts(productResponse.data.items);
-    };
-    productsFetch();
-  }, []);
+function ListResult() {    
+  const { searchedProducts } = React.useContext(ProductContext);  
+  
   return (
     <React.Fragment>
       <div className="container">
@@ -31,7 +17,7 @@ function ListResult() {
         </nav>
         <div className="container bg-white">
           {
-            products.map(product => (
+            searchedProducts.map(product => (
               <ListItem key={product.id} title={product.title} price={product.price} image={product.thumbnail} />
             ))
           }
