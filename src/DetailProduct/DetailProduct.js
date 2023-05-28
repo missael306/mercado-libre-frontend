@@ -15,7 +15,7 @@ function DetailProduct(props) {
 
   React.useEffect(() => {
     const detailFetch = async () => {
-      const detailResponse = await axios.get(`${Config.URL_API}/products/${params.id}`)
+      const detailResponse = await axios.get(`${Config.URL_API}/items/${params.id}`)
         .catch((err) => {
           console.log(err);
           shareFunction.generalErrorMessage();

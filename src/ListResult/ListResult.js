@@ -1,11 +1,21 @@
 import React from 'react';
 import './ListResult.css';
-import { ListItem } from '../ListItem/ListItem.js';
 import { ProductContext } from '../ProductContext/ProductContext.js';
+import { useLocation } from 'react-router-dom';
 
-function ListResult() {    
-  const { searchedProducts } = React.useContext(ProductContext);  
-  
+function ListResult() {  
+  const { emptyList } = React.useContext(ProductContext);
+  const { setSearchValue } = React.useContext(ProductContext);
+  const { setLoadingSearch } = React.useContext(ProductContext);
+  const { search } = useLocation();
+  const query = new URLSearchParams(search);
+  const searchQuery = (query.get('search')) ? query.get('search') : "";  
+
+  React.useEffect(() => {
+    setLoadingSearch(true);
+    setSearchValue(searchQuery);
+  }, [searchQuery, setSearchValue, setLoadingSearch]);  
+
   return (
     <React.Fragment>
       <div className="container">
@@ -17,9 +27,7 @@ function ListResult() {
         </nav>
         <div className="container bg-white">
           {
-            searchedProducts.map(product => (              
-                <ListItem key={product.id} id={product.id} title={product.title} price={product.price} image={product.thumbnail}/>              
-            ))
+            emptyList()
           }
         </div>
       </div>

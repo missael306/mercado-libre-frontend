@@ -1,5 +1,5 @@
 import React from 'react';
-import mercagoLibre from './../assets/img/mercadolibre.svg';
+import mercadoLibre from './../assets/img/mercadolibre.svg';
 import { Link } from 'react-router-dom';
 
 function Unexpected() {
@@ -15,7 +15,7 @@ function Unexpected() {
                     <Link to={'/'}>
                         <h3 className="text-center p-3">¡Ups! Algo salió mal</h3>
                         <div className="p-3">
-                            <img src={mercagoLibre} className="img-fluid d-block w-25 m-auto" alt="logo" />
+                            <img src={mercadoLibre} className="img-fluid d-block w-25 m-auto" alt="logo" />
                         </div>
                     </Link>
                 </div>
