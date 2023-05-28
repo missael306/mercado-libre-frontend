@@ -1,3 +1,8 @@
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
 .app-bullet-available{
     color: green;
 }

@@ -17,8 +17,8 @@ function ListResult() {
         </nav>
         <div className="container bg-white">
           {
-            searchedProducts.map(product => (
-              <ListItem key={product.id} title={product.title} price={product.price} image={product.thumbnail} />
+            searchedProducts.map(product => (              
+                <ListItem key={product.id} id={product.id} title={product.title} price={product.price} image={product.thumbnail}/>              
             ))
           }
         </div>

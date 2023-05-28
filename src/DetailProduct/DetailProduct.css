@@ -2,3 +2,7 @@
     color: var(--secong-text-color-button);
     cursor: pointer;
 }
+
+.app-description{
+    white-space: pre-line;
+}

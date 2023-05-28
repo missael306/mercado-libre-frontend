@@ -2,6 +2,7 @@ import React from 'react';
 import './DetailProduct.css';
 import axios from 'axios';
 import ShareFunction from '../assets/util/shareFunctions';
+import { useParams } from 'react-router-dom';
 const shareFunction = new ShareFunction();
 const Config = require('../assets/util/config');
 
@@ -9,10 +10,12 @@ function DetailProduct(props) {
   const [detail, setDetail] = React.useState({});
   const [condition, setCondition] = React.useState("");
   const [price, setPrice] = React.useState("");
+  const [picture, setPicture] = React.useState("");
+  const params = useParams();
 
   React.useEffect(() => {
     const detailFetch = async () => {
-      const detailResponse = await axios.get(`${Config.URL_API}/products/${props.id}`)
+      const detailResponse = await axios.get(`${Config.URL_API}/products/${params.id}`)
         .catch((err) => {
           console.log(err);
           shareFunction.generalErrorMessage();
@@ -24,9 +27,12 @@ function DetailProduct(props) {
       setCondition(condition);
       const price = parseFloat(dataDetailFetch.price).toLocaleString(undefined, { maximumFractionDigits: 2 });
       setPrice(price);
+      const lastPicture = dataDetailFetch.pictures.length > 1 ? dataDetailFetch.pictures[dataDetailFetch.pictures.length-1] : dataDetailFetch.pictures[0];
+      const picture = lastPicture ? lastPicture.url : "";
+      setPicture(picture);
     };
     detailFetch();
-  }, [props.id]);
+  }, [params.id]);
 
   return (
     <React.Fragment>
@@ -40,7 +46,7 @@ function DetailProduct(props) {
         <div className="container bg-white">
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-8 d-flex justify-ontent-center align-items-center p-3">
-              <img src="https://cdn1.coppel.com/images/catalog/pm/2894843-1.jpg" alt="Producto" className='img-fluid w-75 my-0 mx-auto' />
+              <img src={picture} alt="Producto" className='img-fluid w-75 my-0 mx-auto' />
             </div>
             <div className="col-xs-12 col-sm-12 col-md-4 p-3">
               <div className="card h-100">
@@ -100,7 +106,7 @@ function DetailProduct(props) {
           </div>
           <div className="row p-3">
             <h5>Descripción del producto</h5>
-            <p>
+            <p className='app-description'>
               {detail.description}
             </p>
           </div>

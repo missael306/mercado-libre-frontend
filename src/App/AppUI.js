@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { DetailProduct } from '../DetailProduct/DetailProduct.js';
-import { ListResult } from '../ListResult/ListResult.js';
 import { SearchBar } from '../SearchBar/SearchBar.js';
+import { RouterProvider, } from "react-router-dom";
+import { router } from '../routes/ProductRouter.js';
 
-function AppUI() {    
+function AppUI() {
     return (
         <React.Fragment>
             <SearchBar />
-            <ListResult />
-            <DetailProduct id={"MLA1131359154"}/>
+            <RouterProvider router={router} >                                
+            </RouterProvider>
         </React.Fragment>
     );
 }

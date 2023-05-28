@@ -30,7 +30,7 @@ function SearchBar() {
             </div>
           </form>
         </div>
-      </nav>
+      </nav>      
     </React.Fragment>
   );
 }

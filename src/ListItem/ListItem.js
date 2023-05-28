@@ -1,11 +1,12 @@
 import React from 'react';
 import ShareFunction from '../assets/util/shareFunctions';
+import { Link } from 'react-router-dom';
 const shareFunction = new ShareFunction();
 
 function ListItem(props) {
   return (
     <React.Fragment>
-      <div className="row">
+      <div className="row app-list-item">
         <div className="col col-sm-4 col-md-3 d-flex justify-content-center align-items-center">
           <img src={props.image} alt="Producto" className='img-fluid' />
         </div>
@@ -28,7 +29,9 @@ function ListItem(props) {
         <div className="col col-md-3 d-flex justify-ontent-center align-items-center d-none  d-md-flex">
           <div className="row w-100">
             <div className="col d-grid gap-2">
-              <button type="button" className="btn btn-primary btn-sm">Comprar ahora</button>
+              <Link to={`/items/${props.id}`} className="btn btn-primary btn-sm">
+                Comprar ahora
+              </Link>
               <button type="button" className="btn btn-light btn-sm" onClick={() => { shareFunction.onDevelop() }}>Agregar al carrito</button>
             </div>
           </div>
