@@ -3,10 +3,13 @@ import './DetailProduct.css';
 import axios from 'axios';
 import ShareFunction from '../assets/util/shareFunctions';
 import { useParams } from 'react-router-dom';
+import { ProductContext } from '../ProductContext/ProductContext.js';
+import { BreadCrumb } from '../BreadCrumb/BreadCrumb';
 const shareFunction = new ShareFunction();
 const Config = require('../assets/util/config');
 
 function DetailProduct(props) {
+  const { setCategory } = React.useContext(ProductContext);
   const [detail, setDetail] = React.useState({});
   const [condition, setCondition] = React.useState("");
   const [price, setPrice] = React.useState("");
@@ -27,9 +30,10 @@ function DetailProduct(props) {
       setCondition(condition);
       const price = parseFloat(dataDetailFetch.price).toLocaleString(undefined, { maximumFractionDigits: 2 });
       setPrice(price);
-      const lastPicture = dataDetailFetch.pictures.length > 1 ? dataDetailFetch.pictures[dataDetailFetch.pictures.length-1] : dataDetailFetch.pictures[0];
+      const lastPicture = dataDetailFetch.pictures.length > 1 ? dataDetailFetch.pictures[dataDetailFetch.pictures.length - 1] : dataDetailFetch.pictures[0];
       const picture = lastPicture ? lastPicture.url : "";
       setPicture(picture);
+      setCategory(detailResponse.data.categories);
     };
     detailFetch();
   }, [params.id]);
@@ -37,12 +41,7 @@ function DetailProduct(props) {
   return (
     <React.Fragment>
       <div className="container">
-        <nav aria-label="breadcrumb" className='app-breadcrumb rounded-top-1 mt-3 p-2'>
-          <ol className="breadcrumb mb-0">
-            <li className="breadcrumb-item"><a href="index.html">Celulares y Telefonía</a></li>
-            <li className="breadcrumb-item active" aria-current="page"><a href='index.html'>Celulares y Smartphones</a></li>
-          </ol>
-        </nav>
+        <BreadCrumb />
         <div className="container bg-white">
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-8 d-flex justify-ontent-center align-items-center p-3">

@@ -12,27 +12,26 @@ function ProductProvider(props) {
 
     const [products, setProducts] = React.useState([]);
     const [searchValue, setSearchValue] = React.useState('');
-    const [ loadingSearch, setLoadingSearch ] = React.useState(false);
+    const [category, setCategory] = React.useState([]);
+    const [loadingSearch, setLoadingSearch] = React.useState(false);
 
     React.useEffect(() => {
-        const productsFetch = async () => {                        
-            const productResponse = await axios.get(`${Config.URL_API}/items`,{ params: { q: searchValue } })
+        const productsFetch = async () => {
+            const productResponse = await axios.get(`${Config.URL_API}/items`, { params: { q: searchValue } })
                 .catch((err) => {
                     console.log(err);
                     shareFunction.generalErrorMessage();
-                });
-
-            if (productResponse) {
-                setProducts(productResponse.data.items);
-            }
-        };              
-        if(loadingSearch){
+                });                            
+            setCategory(productResponse.data.categories);
+            setProducts(productResponse.data.items);
+        };
+        if (loadingSearch) {
             productsFetch();
         }
-    }, [searchValue,loadingSearch]);
+    }, [searchValue, loadingSearch]);
 
     const emptyList = () => {
-        
+
         if (products.length === 0) {
             return (
                 <div className="container bg-white py-4">
@@ -52,7 +51,9 @@ function ProductProvider(props) {
             searchValue,
             setSearchValue,
             emptyList,
-            setLoadingSearch
+            setLoadingSearch,
+            category,
+            setCategory
         }}>
             {props.children}
         </ProductContext.Provider>
