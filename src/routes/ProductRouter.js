@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { ListResult } from "../ListResult/ListResult";
 import { DetailProduct } from "../DetailProduct/DetailProduct";
-import { Unexpected } from "../Error/Unexpecetd";
+import { Unexpected } from "../Share/Unexpecetd";
 import { Home } from "../Home/Home";
 
 const router = createBrowserRouter([

@@ -4,9 +4,9 @@ import { ProductContext } from '../ProductContext/ProductContext.js';
 import { useLocation } from 'react-router-dom';
 import { BreadCrumb } from '../BreadCrumb/BreadCrumb';
 import { ListItem } from '../ListItem/ListItem';
-import { LoadingProducts } from './LoadingProducts';
-import { EmptyResult } from './EmptyResult';
-import { Unexpected } from "../Error/Unexpecetd";
+import { Loading } from '../Share/Loading';
+import { EmptyResult } from '../Share/EmptyResult';
+import { Unexpected } from "../Share/Unexpecetd";
 import { ProductServices } from '../services/ProductService';
 
 function ListResult() {
@@ -14,12 +14,11 @@ function ListResult() {
   const { search } = useLocation();
   const query = new URLSearchParams(search);
   const searchQuery = (query.get('search')) ? query.get('search') : "";
-  const [loadingSearch, setLoadingSearch] = React.useState(false);
+  const [loadingSearch, setLoadingSearch] = React.useState(true);
   const [errorgSearch, setErrorgSearch] = React.useState(false);
   const [products, setProducts] = React.useState([]);
 
-  React.useEffect(() => {
-    setLoadingSearch(true);
+  React.useEffect(() => {    
     setSearchValue(searchQuery);
     ProductServices.getProducts(searchQuery).then((response) => {      
       setProducts(response.items);
@@ -39,7 +38,7 @@ function ListResult() {
         <BreadCrumb />
         <div className="container bg-white">
           {!loadingSearch && errorgSearch && <Unexpected />}
-          {loadingSearch && products.length === 0 && <LoadingProducts />}
+          {loadingSearch && products.length === 0 && <Loading />}
           {!loadingSearch && products.length === 0 && <EmptyResult />}
           {
             products.map(product => (

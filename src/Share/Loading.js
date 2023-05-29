@@ -1,7 +1,7 @@
 import React from "react";
 import cargando from './../assets/img/icons8-cargando.gif';
 
-const LoadingProducts = () => {
+const Loading = () => {
     return (
         <React.Fragment>
             <div className="container bg-white py-4">
@@ -10,4 +10,4 @@ const LoadingProducts = () => {
         </React.Fragment>
     );
 };
-export { LoadingProducts };
+export { Loading };
