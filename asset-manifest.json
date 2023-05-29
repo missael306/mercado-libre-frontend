@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/mercado-libre-frontend/static/css/main.750e6250.css",
-    "main.js": "/mercado-libre-frontend/static/js/main.a80f3ffb.js",
+    "main.js": "/mercado-libre-frontend/static/js/main.6a1329ea.js",
     "static/media/bootstrap-icons.woff?": "/mercado-libre-frontend/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
     "static/media/bootstrap-icons.woff2?": "/mercado-libre-frontend/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
     "static/media/logo.svg": "/mercado-libre-frontend/static/media/logo.09882e493248b89394737f8cdbce2cfb.svg",
     "static/media/mercadolibre.svg": "/mercado-libre-frontend/static/media/mercadolibre.09882e493248b89394737f8cdbce2cfb.svg",
     "index.html": "/mercado-libre-frontend/index.html",
     "main.750e6250.css.map": "/mercado-libre-frontend/static/css/main.750e6250.css.map",
-    "main.a80f3ffb.js.map": "/mercado-libre-frontend/static/js/main.a80f3ffb.js.map"
+    "main.6a1329ea.js.map": "/mercado-libre-frontend/static/js/main.6a1329ea.js.map"
   },
   "entrypoints": [
     "static/css/main.750e6250.css",
-    "static/js/main.a80f3ffb.js"
+    "static/js/main.6a1329ea.js"
   ]
 }
