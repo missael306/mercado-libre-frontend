@@ -6,6 +6,7 @@ const shareFunction = new ShareFunction();
 function ListItem(props) {
   return (
     <React.Fragment>
+      <Link to={`/items/${props.id}`} >
       <div className="row app-list-item">
         <div className="col col-sm-4 col-md-3 d-flex justify-content-center align-items-center">
           <img src={props.image} alt="Producto" className='img-fluid' />
@@ -37,6 +38,7 @@ function ListItem(props) {
           </div>
         </div>
       </div>
+      </Link>
     </React.Fragment>
   );
 }
