@@ -1,8 +1,14 @@
 import React from 'react';
 import logo from './../assets/img/logo.svg';
+import { ProductContext } from '../ProductContext/ProductContext.js';
 import './SearchBar.css';
 
 function SearchBar() {
+  const { search, setSearch } = React.useContext(ProductContext);
+
+  const onSearchChange = (event) => {    
+    setSearch(event.target.value);
+  }
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-lg app-navbar">
@@ -18,7 +24,9 @@ function SearchBar() {
                 className="form-control"
                 placeholder="Buscar productos..."
                 aria-label="Buscar productos..."
-                aria-describedby="basic-addon2"/>
+                aria-describedby="basic-addon2"
+                value={search}
+                onChange={onSearchChange}/>
               <span className="input-group-text bi bi-search" id="basic-addon2"></span>
             </div>
           </form>

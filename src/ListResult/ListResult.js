@@ -10,16 +10,16 @@ import { Unexpected } from "../Share/Unexpecetd";
 import { ProductServices } from '../services/ProductService';
 
 function ListResult() {
-  const { setCategory, setSearchValue } = React.useContext(ProductContext);
+  const { setCategory,setSearch } = React.useContext(ProductContext);
   const { search } = useLocation();
   const query = new URLSearchParams(search);
   const searchQuery = (query.get('search')) ? query.get('search') : "";
   const [loadingSearch, setLoadingSearch] = React.useState(true);
   const [errorgSearch, setErrorgSearch] = React.useState(false);
   const [products, setProducts] = React.useState([]);
-
-  React.useEffect(() => {    
-    setSearchValue(searchQuery);
+  
+  React.useEffect(() => {        
+    setSearch(searchQuery);
     ProductServices.getProducts(searchQuery).then((response) => {      
       setProducts(response.items);
       setLoadingSearch(false);
@@ -30,7 +30,7 @@ function ListResult() {
       setErrorgSearch(true);
       setLoadingSearch(false);
     });
-  }, [searchQuery, setProducts, setCategory, setSearchValue]);
+  }, [searchQuery, setProducts, setCategory]);
 
   return (
     <React.Fragment>

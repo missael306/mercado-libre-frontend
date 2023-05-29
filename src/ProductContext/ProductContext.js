@@ -5,13 +5,13 @@ const ProductContext = React.createContext();
 function ProductProvider(props) {
 
     const [products, setProducts] = React.useState([]);
-    const [searchValue, setSearchValue] = React.useState('');
+    const [search, setSearch] = React.useState('');
     const [category, setCategory] = React.useState([]);
     
     return (
         <ProductContext.Provider value={{
-            searchValue,
-            setSearchValue,                        
+            search,
+            setSearch,                        
             category,
             setCategory,
             products,
