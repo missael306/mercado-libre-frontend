@@ -30,7 +30,7 @@ function ListResult() {
       setErrorgSearch(true);
       setLoadingSearch(false);
     });
-  }, [searchQuery, setProducts, setCategory]);
+  }, [searchQuery, setProducts, setCategory, setSearch]);
 
   return (
     <React.Fragment>
